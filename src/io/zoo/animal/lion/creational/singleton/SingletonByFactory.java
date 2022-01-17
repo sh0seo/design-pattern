@@ -1,4 +1,4 @@
-package io.zoo.animal.lion.singleton;
+package io.zoo.animal.lion.creational.singleton;
 
 /**
  * 패토리 메소드를 이용한 singleton

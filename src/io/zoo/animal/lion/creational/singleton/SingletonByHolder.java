@@ -1,4 +1,4 @@
-package io.zoo.animal.lion.singleton;
+package io.zoo.animal.lion.creational.singleton;
 
 /**
  * nested class holder를 이용한 singleton
