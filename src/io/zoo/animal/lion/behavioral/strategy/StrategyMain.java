@@ -8,8 +8,6 @@ import io.zoo.animal.lion.behavioral.strategy.writecode.JsWriteCodeStrategy;
 public class StrategyMain {
 
     public static void main(String[] args) {
-        System.out.println("Strategy Pattern");
-
         Ide intellij = new Intellij("intellij");
         intellij.setWriteCodeStrategy(new DartWriteCodeStrategy());
         intellij.setCompileStrategy(new JavaCompileStrategy());
