@@ -6,9 +6,7 @@ import io.zoo.animal.lion.behavioral.strategy.writecode.WriteCodeStrategy;
 public abstract class Ide {
 
     private final String name;
-
     private WriteCodeStrategy writeCodeStrategy;
-
     private CompileStrategy compileStrategy;
 
     public Ide(String name) {
