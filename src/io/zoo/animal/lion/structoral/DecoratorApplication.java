@@ -7,16 +7,77 @@ package io.zoo.animal.lion.structoral;
 public class DecoratorApplication {
 
     public static void main(String[] args) {
-        Beverage beverage = new Espresso();
-        beverage = new Shot(beverage);
-        beverage = new Whip(beverage);
+        Display line = new RoadDisplay();
+        line.draw();
 
-        System.out.println(beverage.getDescription() + ": " + beverage.cost());
+        line = new LineDecorator(line);
+        line.draw();
 
-        beverage = new Americano();
-        System.out.println(beverage.getDescription() + ": " + beverage.cost());
+        line = new CrossLineDecorator(line);
+        line.draw();
+//        Beverage beverage = new Espresso();
+//        beverage = new Shot(beverage);
+//        beverage = new Whip(beverage);
+//
+//        System.out.println(beverage.getDescription() + ": " + beverage.cost());
+//
+//        beverage = new Americano();
+//        System.out.println(beverage.getDescription() + ": " + beverage.cost());
     }
 
+    static abstract class Display {
+        public abstract void draw();
+    }
+
+    static class RoadDisplay extends Display {
+
+        @Override
+        public void draw() {
+            System.out.println("Default Line");
+        }
+    }
+
+    static class DisplayDecorator extends Display {
+
+        private final Display display;
+
+        public DisplayDecorator(Display display) {
+            this.display = display;
+        }
+
+        @Override
+        public void draw() {
+            display.draw();
+        }
+    }
+
+    static class LineDecorator extends DisplayDecorator {
+
+        public LineDecorator(Display display) {
+            super(display);
+        }
+
+        @Override
+        public void draw() {
+            super.draw();
+            System.out.print("\t차선 표시");
+        }
+    }
+
+    static class CrossLineDecorator extends DisplayDecorator {
+
+        public CrossLineDecorator(Display display) {
+            super(display);
+        }
+
+        @Override
+        public void draw() {
+            super.draw();
+            System.out.println("\t교차로 표시");
+        }
+    }
+
+    /// 여기부터 커피만드는 방법을 이용한 예시
     static abstract class Beverage {
 
         String description = "Menu name is No title";
