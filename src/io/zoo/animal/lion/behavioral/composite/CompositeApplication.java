@@ -1,4 +1,4 @@
-package io.zoo.animal.lion.structoral.composite;
+package io.zoo.animal.lion.behavioral.composite;
 
 import java.util.ArrayList;
 import java.util.List;

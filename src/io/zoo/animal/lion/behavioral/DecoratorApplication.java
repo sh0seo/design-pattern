@@ -1,4 +1,4 @@
-package io.zoo.animal.lion.structoral;
+package io.zoo.animal.lion.behavioral;
 
 /**
  * Decorator Pattern example
